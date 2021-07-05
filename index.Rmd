@@ -115,13 +115,14 @@ knitr::include_graphics("img/bayes-rules-hex.png")
 
 class: center middle
 
-### Target Audience of the Talk
+### Who are you?
 
 .pull-left[
 
-```{r echo=FALSE, fig.align='center', out.width="50%", fig.alt="an illustration of a teacher"}
+```{r echo=FALSE, fig.align='center', out.width="70%", fig.alt="an illustration of a woman holding a book standing in front of a blackboard"}
 knitr::include_graphics("img/teacher.png")
 ```
+
 ]
 
 
@@ -130,10 +131,60 @@ knitr::include_graphics("img/teacher.png")
 .pull-right[
 
 
-```{r echo=FALSE, fig.align='center', out.width="40%", fig.alt="an illustration of a woman climbing stairs"}
-knitr::include_graphics("img/climbing-stairs.png")
+```{r echo=FALSE, fig.align='center', out.width="40%", fig.alt="an illustration of a heafshot of a man with glasses and a tie with a shirt collar"}
+knitr::include_graphics("img/student-solo.png")
 ```
+
 ]
+
+---
+
+class: middle
+
+### A quick example
+
+Let $\pi$ be the proportion of spam emails where $\pi \in [0, 1]$.
+
+--
+
+What do you think $\pi$ is? How certain are you?
+
+---
+
+## Binomial Likelihood
+
+```{r fig.align='center', fig.height=4, fig.alt="X axis reads pi with values from 0 to 1. Y axis reads l of pi given capital Y = y). The curve of the graph has a high peak on the y-axis when pi equals to 0.3. The y-values are almost zero when pi is greater than 0.75."}
+plot_binomial_likelihood(y = 3, n = 10)
+```
+
+---
+
+## Prior Model
+
+.pull-left[
+
+```{r fig.align='center', fig.height=4, fig.alt="X axis reads pi with values from 0 to 1. Y axis reads f of pi). The curve of the graph has a high peak on the y-axis when pi equals to 0.5. The distribution is symmentric."}
+plot_beta(alpha = 4, beta = 4)
+```
+
+]
+
+.pull-right[
+
+```{r fig.align='center', fig.height=4, fig.alt="X axis reads pi with values from 0 to 1. Y axis reads f of pi). The curve of the graph has a high peak on the y-axis when pi equals to 0. The curve is a concave one and y is decreasing as pi is increasing."}
+plot_beta(alpha = 1, beta = 10)
+```
+
+]
+
+---
+
+## Posterior Model
+
+```{r fig.align='center', fig.height=4, fig.alt="X axis reads pi with values from 0 to 1. Y axis reads density. Three curves are shown labeled as prior, (scaled) likelihood, and posterior. The prior curve of the graph has a high peak on the y-axis when pi equals to 0. The curve is a concave one and y is decreasing as pi is increasing. The likelihood curve has a high peak on the y-axis when pi equals to 0.3. The y-values are almost zero when pi is greater than 0.75. The posterior sits between the prior and likelihood curves."}
+plot_beta_binomial(alpha = 1, beta = 10, y = 3, n = 10)
+```
+
 
 ---
 
@@ -147,7 +198,7 @@ class: middle
 knitr::include_graphics("img/student.png")
 ```
 
-.footnote[<a href="https://www.freepnglogos.com/pics/student">Student from freepnglogos.com</a>]
+
 
 ]
 
@@ -205,7 +256,7 @@ class: middle
 
 .pull-left[
 
-```{r echo=FALSE, fig.align='center', fig.height=3, fig.width=4}
+```{r echo=FALSE, fig.align='center', fig.height=3, fig.width=4, fig.alt="three curves on a single plot with no axis labeled. It is coloring scheme indicates its similarity to the previous plot with prior, scaled likelihood and posterior"}
 plot_beta_binomial(1, 4, 13, 28) +
   theme(panel.grid = element_blank(),
         axis.title = element_blank(),
@@ -225,7 +276,7 @@ plot_beta_binomial(1, 4, 13, 28) +
 
 .pull-right[
 
-```{r echo=FALSE, fig.align='center', out.width="100%", fig.alt="a traceplot"}
+```{r echo=FALSE, fig.align='center', out.width="100%", fig.alt="A traceplot with no axis labels. Traceplots have thin vertical lines with varying lengths."}
 knitr::include_graphics("img/unit2.png")
 ```
 
@@ -256,7 +307,7 @@ knitr::include_graphics("img/unit2.png")
 
 .pull-right[
 
-```{r echo=FALSE, fig.align='center', out.width="100%", fig.alt="a traceplot"}
+```{r echo=FALSE, fig.align='center', out.width="100%", fig.alt="A scatterplot with multiple regression lines passing through points. These regression lines are not all over the place, they are clustered with similar but varyin intercepts and slopes."}
 knitr::include_graphics("img/unit3.png")
 ```
 
@@ -279,7 +330,7 @@ knitr::include_graphics("img/unit3.png")
 
 .pull-right[
 
-```{r echo=FALSE, fig.align='center', out.width="100%", fig.alt="a traceplot"}
+```{r echo=FALSE, fig.align='center', out.width="100%", fig.alt="a figure showing hierarchy with a rectangle on top. With a set of arrows pointing downwards leading to a set of rectangles below which also have a set of arrows pointing downwards leading to a different set of rectangles."}
 knitr::include_graphics("img/unit4.png")
 ```
 
@@ -345,8 +396,8 @@ Hands-on Programming
 
 [Metropolis-Hastings Algorithm](https://www.bayesrulesbook.com/chapter-7.html#the-metropolis-hastings-algorithm)
 
-```{r echo=FALSE, fig.align='center', out.width="40%", fig.alt="An icon with two hands typing on the keyboard"}
-knitr::include_graphics("img/typing.png")
+```{r echo=FALSE, fig.align='center', out.width="40%", fig.alt="An icon of a student sitting on a chair and in front a desk with a computer typing."}
+knitr::include_graphics("img/programming.png")
 ```
 
 ]
@@ -354,6 +405,7 @@ knitr::include_graphics("img/typing.png")
 ]
 
 ---
+
 
 class: center middle
 
@@ -375,7 +427,7 @@ class: middle center
 
 ### Compute for a Single Case
 
-```{r echo=FALSE, fig.align='center', out.width="50%", fig.alt="Red bricks on top of each other forming a corner of a wall with a window gap and a tip of a crane hanging from above."}
+```{r echo=FALSE, fig.align='center', out.width="50%", fig.alt="A construction sign with a figure shoveling."}
 knitr::include_graphics("img/build.png")
 ```
 ]
@@ -439,7 +491,7 @@ devtools::install_github("bayes-rules/bayesrules")
 ---
 
 .pull-left[
-```{r fig.align='center'}
+```{r fig.align='center', fig.cap="X axis reads pi with values from 0 to 1. Y axis reads f of pi). The curve of the graph has a high peak on the y-axis when pi equals to 0.25. The y-values are almost zero when pi is greater than 0.70."}
 plot_beta(alpha = 3, beta = 8)
 ```
 
@@ -447,20 +499,20 @@ plot_beta(alpha = 3, beta = 8)
 
 .pull-right[
 
-```{r fig.align='center'}
+```{r fig.align='center', fig.cap="X axis reads pi with values from 0 to 1. Y axis reads f of pi). The curve of the graph has a high peak on the y-axis when pi equals to 0.9. The y-values are almost zero when pi is less than 0.50."}
 plot_beta(alpha = 10, beta = 2)
 ```
 
 ]
 ---
  
-```{r fig.align='center'}
+```{r fig.align='center', fig.alt="X axis reads pi with values from 0 to 1. Y axis reads density. Three curves are shown labeled as prior, (scaled) likelihood, and posterior. The prior curve of the graph has a high peak on the y-axis when pi equals to 0.25 and y values are close to zero when pi is greater than 0.7. The likelihood curve has a high peak on the y-axis when pi equals to 0.95 and is quite peaked with low variance. The posterior sits between the prior and likelihood curves."}
 plot_beta_binomial(alpha = 3, beta = 8, y = 19, n = 20)
 ```
 
 ---
 
-```{r, echo=FALSE, message=FALSE, cache=TRUE}
+```{r, echo=FALSE, message=FALSE, cache=TRUE, fig.alt="3 by 3 prior, scaled likelihood, and posterior plots. In the first column of the plots data (thus the likelihood changes)  from 6 successes out of 13 trials to 29 out of 63 and then to 46 out of 99. All the likelihood curves have a similar pi value when y reaches its maximum. As sample size increases the posterior is closer and closer to the likelihood. Each row represents a different prior model including Beta(14, 1), Beta(5,11) and Beta(1,1) respectively from least peaked (informative) to flat. As the prior gets more informative (peaked) the posterior is closer to prior."}
 ## Code for facet_wrapped Beta-Binomial plots
 ### Plotting function
 beta_binom_grid_plot <- function(data, likelihood = FALSE, posterior = FALSE){
@@ -607,8 +659,7 @@ model <- rstanarm::stan_glm(y ~ x,  data =data, refresh = FALSE, seed=84735)
 ```{r cache=TRUE}
 prediction_summary(model, data, 
                    prob_inner = 0.6, 
-                   prob_outer = 0.80, 
-                   stable = TRUE)
+                   prob_outer = 0.80)
 ```
 
 ]
@@ -735,8 +786,17 @@ class: middle
 
 ---
 
-class: middle center
+
+
+.center[
+
+.middle[
 
 Questions?
 
 [bit.ly/dogucu-talks](https://bit.ly/dogucu-talks)
+
+]
+]
+
+.footnote[<a href="https://www.freepnglogos.com">Images from freepnglogos.com</a>]

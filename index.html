@@ -105,11 +105,12 @@ class:center
 
 class: center middle
 
-### Target Audience of the Talk
+### Who are you?
 
 .pull-left[
 
-&lt;img src="img/teacher.png" title="an illustration of a teacher" alt="an illustration of a teacher" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/teacher.png" title="an illustration of a woman holding a book standing in front of a blackboard" alt="an illustration of a woman holding a book standing in front of a blackboard" width="70%" style="display: block; margin: auto;" /&gt;
+
 ]
 
 
@@ -118,8 +119,70 @@ class: center middle
 .pull-right[
 
 
-&lt;img src="img/climbing-stairs.png" title="an illustration of a woman climbing stairs" alt="an illustration of a woman climbing stairs" width="40%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/student-solo.png" title="an illustration of a heafshot of a man with glasses and a tie with a shirt collar" alt="an illustration of a heafshot of a man with glasses and a tie with a shirt collar" width="40%" style="display: block; margin: auto;" /&gt;
+
 ]
+
+---
+
+class: middle
+
+### A quick example
+
+Let `\(\pi\)` be the proportion of spam emails where `\(\pi \in [0, 1]\)`.
+
+--
+
+What do you think `\(\pi\)` is? How certain are you?
+
+---
+
+## Binomial Likelihood
+
+
+```r
+plot_binomial_likelihood(y = 3, n = 10)
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-5-1.png" title="X axis reads pi with values from 0 to 1. Y axis reads l of pi given capital Y = y). The curve of the graph has a high peak on the y-axis when pi equals to 0.3. The y-values are almost zero when pi is greater than 0.75." alt="X axis reads pi with values from 0 to 1. Y axis reads l of pi given capital Y = y). The curve of the graph has a high peak on the y-axis when pi equals to 0.3. The y-values are almost zero when pi is greater than 0.75." style="display: block; margin: auto;" /&gt;
+
+---
+
+## Prior Model
+
+.pull-left[
+
+
+```r
+plot_beta(alpha = 4, beta = 4)
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-6-1.png" title="X axis reads pi with values from 0 to 1. Y axis reads f of pi). The curve of the graph has a high peak on the y-axis when pi equals to 0.5. The distribution is symmentric." alt="X axis reads pi with values from 0 to 1. Y axis reads f of pi). The curve of the graph has a high peak on the y-axis when pi equals to 0.5. The distribution is symmentric." style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+
+
+```r
+plot_beta(alpha = 1, beta = 10)
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-7-1.png" title="X axis reads pi with values from 0 to 1. Y axis reads f of pi). The curve of the graph has a high peak on the y-axis when pi equals to 0. The curve is a concave one and y is decreasing as pi is increasing." alt="X axis reads pi with values from 0 to 1. Y axis reads f of pi). The curve of the graph has a high peak on the y-axis when pi equals to 0. The curve is a concave one and y is decreasing as pi is increasing." style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+## Posterior Model
+
+
+```r
+plot_beta_binomial(alpha = 1, beta = 10, y = 3, n = 10)
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" title="X axis reads pi with values from 0 to 1. Y axis reads density. Three curves are shown labeled as prior, (scaled) likelihood, and posterior. The prior curve of the graph has a high peak on the y-axis when pi equals to 0. The curve is a concave one and y is decreasing as pi is increasing. The likelihood curve has a high peak on the y-axis when pi equals to 0.3. The y-values are almost zero when pi is greater than 0.75. The posterior sits between the prior and likelihood curves." alt="X axis reads pi with values from 0 to 1. Y axis reads density. Three curves are shown labeled as prior, (scaled) likelihood, and posterior. The prior curve of the graph has a high peak on the y-axis when pi equals to 0. The curve is a concave one and y is decreasing as pi is increasing. The likelihood curve has a high peak on the y-axis when pi equals to 0.3. The y-values are almost zero when pi is greater than 0.75. The posterior sits between the prior and likelihood curves." style="display: block; margin: auto;" /&gt;
+
 
 ---
 
@@ -131,7 +194,7 @@ class: middle
 .pull-left[
 &lt;img src="img/student.png" title="an illustration of four students with bags who are holding workbooks." alt="an illustration of four students with bags who are holding workbooks." width="100%" style="display: block; margin: auto;" /&gt;
 
-.footnote[&lt;a href="https://www.freepnglogos.com/pics/student"&gt;Student from freepnglogos.com&lt;/a&gt;]
+
 
 ]
 
@@ -189,7 +252,7 @@ class: middle
 
 .pull-left[
 
-&lt;img src="index_files/figure-html/unnamed-chunk-7-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-11-1.png" title="three curves on a single plot with no axis labeled. It is coloring scheme indicates its similarity to the previous plot with prior, scaled likelihood and posterior" alt="three curves on a single plot with no axis labeled. It is coloring scheme indicates its similarity to the previous plot with prior, scaled likelihood and posterior" style="display: block; margin: auto;" /&gt;
 ]
 
 ]
@@ -201,7 +264,7 @@ class: middle
 
 .pull-right[
 
-&lt;img src="img/unit2.png" title="a traceplot" alt="a traceplot" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/unit2.png" title="A traceplot with no axis labels. Traceplots have thin vertical lines with varying lengths." alt="A traceplot with no axis labels. Traceplots have thin vertical lines with varying lengths." width="100%" style="display: block; margin: auto;" /&gt;
 
 
 ]
@@ -230,7 +293,7 @@ class: middle
 
 .pull-right[
 
-&lt;img src="img/unit3.png" title="a traceplot" alt="a traceplot" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/unit3.png" title="A scatterplot with multiple regression lines passing through points. These regression lines are not all over the place, they are clustered with similar but varyin intercepts and slopes." alt="A scatterplot with multiple regression lines passing through points. These regression lines are not all over the place, they are clustered with similar but varyin intercepts and slopes." width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -251,7 +314,7 @@ class: middle
 
 .pull-right[
 
-&lt;img src="img/unit4.png" title="a traceplot" alt="a traceplot" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/unit4.png" title="a figure showing hierarchy with a rectangle on top. With a set of arrows pointing downwards leading to a set of rectangles below which also have a set of arrows pointing downwards leading to a different set of rectangles." alt="a figure showing hierarchy with a rectangle on top. With a set of arrows pointing downwards leading to a set of rectangles below which also have a set of arrows pointing downwards leading to a different set of rectangles." width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -311,13 +374,14 @@ Hands-on Programming
 
 [Metropolis-Hastings Algorithm](https://www.bayesrulesbook.com/chapter-7.html#the-metropolis-hastings-algorithm)
 
-&lt;img src="img/typing.png" title="An icon with two hands typing on the keyboard" alt="An icon with two hands typing on the keyboard" width="40%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/programming.png" title="An icon of a student sitting on a chair and in front a desk with a computer typing." alt="An icon of a student sitting on a chair and in front a desk with a computer typing." width="40%" style="display: block; margin: auto;" /&gt;
 
 ]
 
 ]
 
 ---
+
 
 class: center middle
 
@@ -339,7 +403,7 @@ class: middle center
 
 ### Compute for a Single Case
 
-&lt;img src="img/build.png" title="Red bricks on top of each other forming a corner of a wall with a window gap and a tip of a crane hanging from above." alt="Red bricks on top of each other forming a corner of a wall with a window gap and a tip of a crane hanging from above." width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/build.png" title="A construction sign with a figure shoveling." alt="A construction sign with a figure shoveling." width="50%" style="display: block; margin: auto;" /&gt;
 ]
 
 .pull-right[
@@ -407,7 +471,10 @@ devtools::install_github("bayes-rules/bayesrules")
 plot_beta(alpha = 3, beta = 8)
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-16-1.png" style="display: block; margin: auto;" /&gt;
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-20-1.png" alt="X axis reads pi with values from 0 to 1. Y axis reads f of pi). The curve of the graph has a high peak on the y-axis when pi equals to 0.25. The y-values are almost zero when pi is greater than 0.70."  /&gt;
+&lt;p class="caption"&gt;X axis reads pi with values from 0 to 1. Y axis reads f of pi). The curve of the graph has a high peak on the y-axis when pi equals to 0.25. The y-values are almost zero when pi is greater than 0.70.&lt;/p&gt;
+&lt;/div&gt;
 
 ]
 
@@ -418,7 +485,10 @@ plot_beta(alpha = 3, beta = 8)
 plot_beta(alpha = 10, beta = 2)
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-17-1.png" style="display: block; margin: auto;" /&gt;
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-21-1.png" alt="X axis reads pi with values from 0 to 1. Y axis reads f of pi). The curve of the graph has a high peak on the y-axis when pi equals to 0.9. The y-values are almost zero when pi is less than 0.50."  /&gt;
+&lt;p class="caption"&gt;X axis reads pi with values from 0 to 1. Y axis reads f of pi). The curve of the graph has a high peak on the y-axis when pi equals to 0.9. The y-values are almost zero when pi is less than 0.50.&lt;/p&gt;
+&lt;/div&gt;
 
 ]
 ---
@@ -428,14 +498,14 @@ plot_beta(alpha = 10, beta = 2)
 plot_beta_binomial(alpha = 3, beta = 8, y = 19, n = 20)
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-18-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-22-1.png" title="X axis reads pi with values from 0 to 1. Y axis reads density. Three curves are shown labeled as prior, (scaled) likelihood, and posterior. The prior curve of the graph has a high peak on the y-axis when pi equals to 0.25 and y values are close to zero when pi is greater than 0.7. The likelihood curve has a high peak on the y-axis when pi equals to 0.95 and is quite peaked with low variance. The posterior sits between the prior and likelihood curves." alt="X axis reads pi with values from 0 to 1. Y axis reads density. Three curves are shown labeled as prior, (scaled) likelihood, and posterior. The prior curve of the graph has a high peak on the y-axis when pi equals to 0.25 and y values are close to zero when pi is greater than 0.7. The likelihood curve has a high peak on the y-axis when pi equals to 0.95 and is quite peaked with low variance. The posterior sits between the prior and likelihood curves." style="display: block; margin: auto;" /&gt;
 
 ---
 
 
 
 
-&lt;img src="index_files/figure-html/unnamed-chunk-20-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-24-1.png" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -506,13 +576,12 @@ class: middle
 ```r
 prediction_summary(model, data, 
                    prob_inner = 0.6, 
-                   prob_outer = 0.80, 
-                   stable = TRUE)
+                   prob_outer = 0.80)
 ```
 
 ```
        mae mae_scaled within_60 within_80
-1 1.842515  0.7105428       0.7       0.8
+1 4.739019  0.6832428      0.65      0.85
 ```
 
 ]
@@ -534,12 +603,12 @@ prediction_summary_cv(model = model,
 ```
 $folds
   fold      mae mae_scaled within_60 within_80
-1    1 2.855320  0.5851069       0.5       0.8
-2    2 4.427488  1.1154452       0.2       0.7
+1    1 5.820976  0.7944069       0.5       0.6
+2    2 1.976291  0.2052921       0.8       1.0
 
 $cv
        mae mae_scaled within_60 within_80
-1 3.641404   0.850276      0.35      0.75
+1 3.898634  0.4998495      0.65       0.8
 ```
 
 ]
@@ -617,7 +686,7 @@ normal_model_sim &lt;- stan_glm(rides ~ temp_feel,
 mcmc_trace(normal_model_sim, size = 0.1)
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-28-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-32-1.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -628,7 +697,7 @@ mcmc_trace(normal_model_sim, size = 0.1)
 mcmc_dens_overlay(normal_model_sim)
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-29-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-33-1.png" width="80%" style="display: block; margin: auto;" /&gt;
 ]
 
 
@@ -652,11 +721,20 @@ class: middle
 
 ---
 
-class: middle center
+
+
+.center[
+
+.middle[
 
 Questions?
 
 [bit.ly/dogucu-talks](https://bit.ly/dogucu-talks)
+
+]
+]
+
+.footnote[&lt;a href="https://www.freepnglogos.com"&gt;Images from freepnglogos.com&lt;/a&gt;]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
